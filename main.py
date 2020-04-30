@@ -5,6 +5,19 @@ from flask_wtf import FlaskForm
 from wtforms import RadioField
 import random
 
+import threading
+
+
+
+# import threading
+
+def printit(mydb):
+  threading.Timer(5.0, printit).start()
+  cursor=mydb.cursor()
+  cursor.execute("select * from `Past Deals`")
+  result=cursor.fetchall()
+  return
+
 def id_gen():
     a=random.randint(10,99)
     b=random.randint(100,999)
@@ -14,6 +27,9 @@ def id_gen():
 
 mydb = mysql.connector.connect(host="bf7mr1vwi7msfr68y7hp-mysql.services.clever-cloud.com",user="udomf8bxxkqfe0xk",password="bKEHE3CKtZES0UbEu7n3",database="bf7mr1vwi7msfr68y7hp")
 print(mydb)
+
+printit(mydb)
+
 
 class HitmanForm(FlaskForm):
     # style={'style':'font-size:larger'}
