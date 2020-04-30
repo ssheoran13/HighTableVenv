@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}Results{% endblock %}
+
+{%block content%}
+
+<h2 style="font-size: xx-large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">RESULTS PAGE</h2>
+
+<!-- <h3 style="font-size:xx-large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">The results of your query are as follows:  </h3> -->
+<p style="font-size: larger;">The results of your query are as follows:</p>
+
+<!-- {{data}} -->
+{%if data!=[]%}
+<table style="width:1000px " margin:2px><tr>
+{%for i in head%}
+
+    <th>{{i}}</th>
+
+{%endfor%}
+</tr>
+</table>
+{% for i in data %}
+<table  style="width:1000px " margin:5px>
+    <tr>
+    {%for j in i%}
+        <td style="font-size: large; word-wrap: break-word;">{{j}}</td>
+    {%endfor%}
+    </tr>
+</table>
+
+
+{% endfor %}
+{%else%}
+<p style="color: black;">No results were found for your query.</p>
+{%endif%}
+{%if msg!=''%}
+<div class="msg">{{ msg }}</div>
+{%endif%}
+{%endblock%}

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2 style="font-size: xx-large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">HOME PAGE</h2>
+<p style=" font-size: larger;">Welcome back, {{ username }}!
+    What would you like to do today?
+</p>
+
+
+   <div >
+    <form method="post" class="container" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">
+        {{ form.hidden_tag() }}
+        {{ form.example(class_='lol')}}
+        <div class="msg">{{msg}}</div>
+
+        <input type="submit" style="margin-top: 10px; padding-top: 5px; padding-bottom: 5px;">
+    </form>
+</div>
+
+{% endblock %}
+
+

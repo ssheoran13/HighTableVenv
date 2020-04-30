@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2 style="font-size:xx-large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">PROFILE PAGE</h2>
+<div class="profile" >
+    <p style="font-size: large; font-family:'Courier New', Courier, monospace;">Your account details are below:</p>
+    {%if account[4]=='Hitman'%}
+    <img src="/static/hitman.jpg" width="250" height="200" style="border:3px solid black; float:right; margin-right: 50px; ">
+    {%elif account[4]=='Continental'%}
+    <img src="/static/continental.jpg" width="250" height="200" style="border:3px solid black; float:right; margin-right: 50px; ">
+
+    {%elif account[4]=='Client'%}
+    <img src="/static/client.png" width="250" height="200" style="border:3px solid black; float:right; margin-right: 50px; ">
+
+    {%elif account[4]=='Services'%}
+    <img src="/static/dealer.jpg" width="200" height="230" style="border:3px solid black; float:right; margin-right: 50px; margin-bottom: 50px;">
+    {%endif%}
+    <table style="border: 0px; margin-top: 50px;">
+        <tr>
+            <td style="border: 0px;">Username:</td>
+            <td style="border: 0px;">{{ account[1] }}</td>
+        </tr>
+        <tr>
+            <td style="border: 0px;">User Type:</td>
+            <td style="border: 0px;">{{ account[4] }}</td>
+        </tr>
+        <tr>
+            <td style="border: 0px;">Password:</td>
+            <td style="border: 0px;">{{ account[2] }}</td>
+        </tr>
+        <tr>
+            <td style="border: 0px;">Email:</td>
+            <td style="border: 0px;">{{ account[3] }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

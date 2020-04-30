@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %} Input Query {% endblock %}
+
+{%block content%}
+<h2 style="font-size:xx-large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Input Query Details</h2>
+<p style="font-size: larger;">{{msg}}</p>
+
+<!-- <label for="username">
+    <i class="fas fa-user"></i>
+</label> -->
+<form action="{{url_for('run_query')}}" method="POST">
+<input type="text" name="querydata" placeholder="Please input query details, separated by commas"  style="margin-bottom: 30px; width:1000px; height:100px; padding-left: 10px;"  id="querydata">
+<input type="submit" value="Submit Query" style="padding-top: 3px; padding-bottom: 3px;">
+</form>
+{%endblock%}
