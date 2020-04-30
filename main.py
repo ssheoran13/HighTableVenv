@@ -12,7 +12,7 @@ def id_gen():
     return (str(a)+'-'+str(b)+'-'+str(c))
     # print(str(a)+'-'+str(b)+'-'+str(c))
 
-mydb = mysql.connector.connect(host="Shikhars-MacBook-Pro.local",user="shikhar",password="1234ball",database="db")
+mydb = mysql.connector.connect(host="bf7mr1vwi7msfr68y7hp-mysql.services.clever-cloud.com",user="udomf8bxxkqfe0xk",password="bKEHE3CKtZES0UbEu7n3",database="bf7mr1vwi7msfr68y7hp")
 print(mydb)
 
 class HitmanForm(FlaskForm):
